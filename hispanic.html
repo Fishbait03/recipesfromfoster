@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="hispanic-styles.css">
+    <script defer src="hispanic-script.js" dfer></script>
+    <title>Hispanic Cuisenes</title>
+  </head>
+  <body class="body">
+    <header class="header-container">
+      <div class="search-container">  
+      <input type="text" id="search" placeholder="Search recipes...">
+
+      <ul id="recipeList">
+        <li>
+          <div class="recipe-name">One-Pot Pasta</div>
+          <div class="recipe-meta">~$25 * 30 Mins * Italian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Burrito Bowls</div>
+          <div class="recipe-meta">~$35 * 30 Mins * Hispanic</div>
+        </li>
+        <li>
+          <div class="recipe-name">Chicken Tortellini Pesto</div>
+          <div class="recipe-meta">~$50 (Double Batch) * 30 Mins * Italian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Nana Kay's Stroganoff</div>
+          <div class="recipe-meta">~$35 * 2 to 3 Hours * Nana Kay Recipe</div>
+        </li>
+        <li>
+          <div class="recipe-name">Orange Chicken Stir Fry</div>
+          <div class="recipe-meta">~$45 * 45 Mins * Asian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Nana Kay's Washday Stew</div>
+          <div class="recipe-meta">~$20 * 75 Mins * Nana Kay Recipe</div>
+        </li>
+      </ul>
+    </div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <section class="subcategory-hero">
+        <div class="overlay">
+          <h1>Hispanic Cuisenes</h1>
+          <p>From burritos to tacos to quesadillas, the ingredients don't change, just the shape</p>
+        </div>
+      </section>  
+      <nav class="nav" id="nav">
+        <a href="home-page.html">Home</a>
+        <a href="by-cuisines.html">Cuisines</a>
+        <a href="by-price.html">Price</a>
+        <a href="by-cook-time.html">Cooking Time</a>
+        <a href="random-recipe.html" onclick="goToRandomPage(); return false;">Random Recipe!</a>
+      </nav>
+    </header>
+    <main>
+      <div class="sort-container">
+          <label for="sort"></label>
+          <select id="sort">
+            <option value="alphabetical">A-Z</option>
+            <option value="lacitebahpla">Z-A</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="time-low">Cook Time: Slowest to Fastest</option>
+            <option value="time-high">Cook Time: Fastest to Slowest</option>
+          </select>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+      <a href="burrito-bowl.html" class="category-card"
+          data-name="Burrito Bowl"
+          data-price="35"
+          data-time="30">
+        <img alt="Burrito-Bowl-Pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXutkYNA76a_33BUidEOXwYQ_7nhiQukPL3A&s">
+        <h2>Burrito Bowls</h2>
+        <p>~$35 * 30 Mins</p>
+        </div>
+      </a>
+      </div>
+    </main>
+    <footer>
+      <p>Links:</p>
+      <a class="footer-nav-item" href="https://www.youtube.com/@Cookster5303">Youtube Channel</a>
+      <a class="footer-nav-item" href="mailto:cookingwithfoster@gmail.com">Email Me</a>
+      <a class="footer-nav-item" href="https://docs.google.com/forms/d/e/1FAIpQLSev2oEf2AXdplUa6YTQya08hpiZHCpJwaaWleGGoNRWWZP4cg/viewform?usp=publish-editor">Recipe Request Form</a>
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  let search = document.getElementById("search");
+  let list = document.getElementById("recipeList");
+
+  search.addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let items = list.querySelectorAll("li");
+
+    if (filter.trim() === "") {
+      list.classList.remove("show");
+      return;
+    }
+
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      let name = item.querySelector(".recipe-name").textContent.toLowerCase();
+
+      if (name.includes(filter)) {
+        item.style.display = "";
+        visibleCount++;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    if (visibleCount > 0) {
+      list.classList.add("show");
+    } else {
+      list.classList.remove("show");
+    }
+  });
+
+});
+</script>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+<script>
+const sortSelect = document.getElementById("sort");
+const categoryGrid = document.getElementById("categoryGrid");
+
+sortSelect.addEventListener("change", () => {
+  const cards = Array.from(
+    categoryGrid.querySelectorAll(".category-card")
+  );
+
+  switch(sortSelect.value) {
+    case "alphabetical":
+      cards.sort((a, b) =>
+        a.dataset.name.localeCompare(b.dataset.name)
+      );
+      break;
+    case "lacitebahpla":
+      cards.sort((a, b) =>
+        b.dataset.name.localeCompare(a.dataset.name)
+      );
+      break;  
+    case "price-low":
+      cards.sort((a, b) =>
+        Number(a.dataset.price) - Number(b.dataset.price)
+      );
+      break;
+    case "price-high":
+      cards.sort((a, b) =>
+        Number(b.dataset.price) - Number(a.dataset.price)
+      );
+      break;
+    case "time-low":
+      cards.sort((a, b) =>
+        Number(a.dataset.time) - Number(b.dataset.time)
+      );
+      break;
+    case "time-high":
+      cards.sort((a, b) =>
+        Number(b.dataset.time) - Number(a.dataset.time)
+      );
+      break;
+  }
+
+  // Append sorted cards back into the container
+  cards.forEach(card => categoryGrid.appendChild(card));
+  
+  // Force grid recalculation
+  categoryGrid.style.display = "none";
+  categoryGrid.offsetHeight;
+  categoryGrid.style.display = "grid";
+});
+</script>
+  </body>
+</html>
