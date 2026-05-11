@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="by-cook-time-styles.css">
+    <script src="by-cook-time-script.js" defer></script>
+    <title>Recipes by Cook Time</title>
+  </head>
+  <body class="body">
+    <header class="header-container">
+      <div class="search-container">  
+      <input type="text" id="search" placeholder="Search recipes...">
+
+      <ul id="recipeList">
+        <li>
+          <div class="recipe-name">One-Pot Pasta</div>
+          <div class="recipe-meta">~$25 * 30 Mins * Italian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Burrito Bowls</div>
+          <div class="recipe-meta">~$35 * 30 Mins * Hispanic</div>
+        </li>
+        <li>
+          <div class="recipe-name">Chicken Tortellini Pesto</div>
+          <div class="recipe-meta">~$50 (Double Batch) * 30 Mins * Italian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Nana Kay's Stroganoff</div>
+          <div class="recipe-meta">~$35 * 2 to 3 Hours * Nana Kay Recipe</div>
+        </li>
+        <li>
+          <div class="recipe-name">Orange Chicken Stir Fry</div>
+          <div class="recipe-meta">~$45 * 45 Mins * Asian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Nana Kay's Washday Stew</div>
+          <div class="recipe-meta">~$20 * 75 Mins * Nana Kay Recipe</div>
+        </li>
+      </ul>
+    </div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <p class="title">Recipes by Cook Time</p>
+      <nav class="nav" id="nav">
+        <a href="home-page.html">Home</a>
+        <a href="by-cuisines.html">Cuisines</a>
+        <a href="by-price.html">Price</a>
+        <a href="random-recipe.html" onclick="goToRandomPage(); return false;">Random Recipe!</a>
+      </nav>
+    </header>
+    <main>
+      <section class="info-section">
+      <p class="text-content">Below are all of my recipes organized by cook time, from fastest at the top of 
+      the page and the slower, longer recipes towards the bottom. Time needs vary from 
+      day to day, so pick what suits your schedule!</p>
+      </section>
+      <section class="info-section">
+      <h2 class="welcome">Time Amounts</h2>
+        <div class="category-grid">
+          <a href="under-30-mins.html" class="category-card">
+            <img width="150" alt="30-mins-picture" src="data:image/jpeg;base64,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">
+            <h3>Meals Under 30 Minutes</h3>
+            </a>
+          <a href="30-60-mins.html" class="category-card">
+            <img width="150" alt="60-mins-picture" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMcNNSgKtBz7OF9KsgVGiT0Np1-edFxAFjFw&s">
+            <h3>Meals in 30 to 60 Minutes</h3>
+            </a>
+          <a href="60-90-mins.html" class="category-card">
+            <img width="150" height="150" alt="90-mins-picture" src="data:image/png;base64,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">
+            <h3>Meals in 60 to 90 Minutes</h3>
+            </a>
+          <a href="90-mins-to-2-hrs.html" class="category-card">
+            <img width="150" alt="2-hrs-picture" src="data:image/png;base64,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">
+            <h3>Meals in 90 Minutes to 2+ Hours</h3>
+            </a> 
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Links:</p>
+      <a class="footer-nav-item" href="https://www.youtube.com/@Cookster5303">Youtube Channel</a>
+      <a class="footer-nav-item" href="mailto:cookingwithfoster@gmail.com">Email Me</a>
+      <a class="footer-nav-item" href="https://docs.google.com/forms/d/e/1FAIpQLSev2oEf2AXdplUa6YTQya08hpiZHCpJwaaWleGGoNRWWZP4cg/viewform?usp=publish-editor">Recipe Request Form</a>
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  let search = document.getElementById("search");
+  let list = document.getElementById("recipeList");
+
+  search.addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let items = list.querySelectorAll("li");
+
+    if (filter.trim() === "") {
+      list.classList.remove("show");
+      return;
+    }
+
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      let name = item.querySelector(".recipe-name").textContent.toLowerCase();
+
+      if (name.includes(filter)) {
+        item.style.display = "";
+        visibleCount++;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    if (visibleCount > 0) {
+      list.classList.add("show");
+    } else {
+      list.classList.remove("show");
+    }
+  });
+
+});
+</script>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+  </body>
+</html>
