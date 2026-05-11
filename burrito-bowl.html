@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="burrito-bowl-styles.css">
+    <script defer src="burrito-bowl-script.js" dfer></script>
+    <title>Burrito Bowls</title>
+  </head>
+  <body class="body">
+    <header class="header-container">
+      <div class="search-container">  
+      <input type="text" id="search" placeholder="Search recipes...">
+
+      <ul id="recipeList">
+        <li>
+          <div class="recipe-name">One-Pot Pasta</div>
+          <div class="recipe-meta">~$25 * 30 Mins * Italian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Burrito Bowls</div>
+          <div class="recipe-meta">~$35 * 30 Mins * Hispanic</div>
+        </li>
+        <li>
+          <div class="recipe-name">Chicken Tortellini Pesto</div>
+          <div class="recipe-meta">~$50 (Double Batch) * 30 Mins * Italian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Nana Kay's Stroganoff</div>
+          <div class="recipe-meta">~$35 * 2 to 3 Hours * Nana Kay Recipe</div>
+        </li>
+        <li>
+          <div class="recipe-name">Orange Chicken Stir Fry</div>
+          <div class="recipe-meta">~$45 * 45 Mins * Asian</div>
+        </li>
+        <li>
+          <div class="recipe-name">Nana Kay's Washday Stew</div>
+          <div class="recipe-meta">~$20 * 75 Mins * Nana Kay Recipe</div>
+        </li>
+      </ul>
+    </div>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <p class="title">Burrito Bowls</p>
+      <nav class="nav" id="nav">
+        <a href="home-page.html">Home</a>
+        <a href="by-cuisines.html">Cuisines</a>
+        <a href="by-price.html">Price</a>
+        <a href="by-cook-time.html">Cooking Time</a>
+        <a href="random-recipe.html" onclick="goToRandomPage(); return false;">Random Recipe!</a>
+      </nav>
+    </header>
+    <main>
+      <section class="food-pic">
+        <img id="Burrito-Bowl-Pic" alt="Burrito-Bowl-Pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXutkYNA76a_33BUidEOXwYQ_7nhiQukPL3A&s">
+        </section>
+      <section class="info-section">
+        <h2 class="welcome">Burrito Bowls
+        <div class="recipe-tags">
+          <span>Hispanic;</span>
+          <span>30 Minutes;</span>
+          <span>~$35</span>
+        </div>
+        </h2>
+        <p class="text-content" id="welcome">This recipe is great to make a bunch of 
+        because it reheats great. You can eat it just as a bowl, with chips, or 
+        put it in a tortilla and make it a real burrito!</p>
+      </section>
+      <section class="info-section"><h2 class="categories">Ingredient List</h2>
+      <div class="category-grid">
+        <ul class="ingredients-list">
+          <li>
+            <input type="checkbox">
+            <span class="amount">1</span> 
+            <span class="ingredient">Bell Pepper, diced</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">1 to 2 Tbsp</span>
+            <span class="ingredient">Olive Oil</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">1 to 2 lbs</span>
+            <span class="ingredient">Chicken Breast, cubed</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">10 oz Can</span>
+            <span class="ingredient">Rotel Diced Tomatoes in Green Chiles</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">15 oz Can</span>
+            <span class="ingredient">Black Beans, drained and rinsed</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">8 oz Can</span>
+            <span class="ingredient">Tomato Sauce</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">1 oz Packet</span>
+            <span class="ingredient">Taco Seasoning</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">1.5 Cups</span>
+            <span class="ingredient">Chicken Stock</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <span class="amount">1 Cup</span>
+            <span class="ingredient">White Rice, washed</span>
+          </li>
+          <li>
+            <input type="checkbox">
+            <!-- <span class="amount">1</span> -->
+            <span class="ingredient">Mexican Cheese Mix, for topping</span>
+          </li>
+        </ul>
+      </div>
+      </section>
+      <section class="info-section"><h2 class="categories">Directions</h2>
+      <div class="category-grid">
+        <ol class="directions-list">
+          <li>Dice your bell pepper</li>
+          <li>Cube your chicken breast, trying to get similar sized cubes</li>
+          <li>Open your 3 cans</li>
+          <li>Measure out 1.5 cups of chicken stock or 1.5 cups hot water with 1.5 tsp of chicken bouillon mixed in</li>
+          <li>Measure out your rice</li>
+          <li>In a large skillet, add your olive oil and heat on medium heat</li>
+          <li>Add your chicken breast and cook thoroughly</li>
+          <li>Once your chicken is fully cooked, add all remaining ingredients to the pan and stir to combine</li>
+          <li>Bring to a boil, then reduce heat and cover</li>
+          <li>Let cook for 15 to 20 minutes, stirring halfway through</li>
+          <li>After the 15 or 20 minutes, you can add your Mexican Cheese to mix in or leave it to be a garnish</li>
+          <li>Top with guacamole, sour cream, salsa and cheese (if left out originally)</li>
+          <li>Enjoy!</li>
+        </ol>
+      </div>
+      </section>
+    </main>
+    <footer>
+      <p>Links:</p>
+      <a class="footer-nav-item" href="https://www.youtube.com/@Cookster5303">Youtube Channel</a>
+      <a class="footer-nav-item" href="mailto:cookingwithfoster@gmail.com">Email Me</a>
+      <a class="footer-nav-item" href="https://docs.google.com/forms/d/e/1FAIpQLSev2oEf2AXdplUa6YTQya08hpiZHCpJwaaWleGGoNRWWZP4cg/viewform?usp=publish-editor">Recipe Request Form</a>
+    </footer>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  let search = document.getElementById("search");
+  let list = document.getElementById("recipeList");
+
+  search.addEventListener("keyup", function() {
+    let filter = this.value.toLowerCase();
+    let items = list.querySelectorAll("li");
+
+    if (filter.trim() === "") {
+      list.classList.remove("show");
+      return;
+    }
+
+    let visibleCount = 0;
+
+    items.forEach(item => {
+      let name = item.querySelector(".recipe-name").textContent.toLowerCase();
+
+      if (name.includes(filter)) {
+        item.style.display = "";
+        visibleCount++;
+      } else {
+        item.style.display = "none";
+      }
+    });
+
+    if (visibleCount > 0) {
+      list.classList.add("show");
+    } else {
+      list.classList.remove("show");
+    }
+  });
+
+});
+</script>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("active");
+}
+</script>
+  </body>
+</html>
