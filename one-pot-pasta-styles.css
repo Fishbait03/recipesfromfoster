@@ -159,6 +159,7 @@
 .video-section {
     margin: 2rem auto;
     text-align: center;
+    margin-top: 40px;
 }
 
 .video-title {
@@ -170,7 +171,6 @@
     background: linear-gradient(90deg, #1e3c72, #2a5298);
 
     padding: 12px 24px;
-    padding-top: 12px;
     border-radius: 14px;
 
     width: fit-content;
