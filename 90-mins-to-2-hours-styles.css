@@ -147,6 +147,14 @@
   color: #777;
 }
 
+.recipe-name a {
+  text-decoration: none;
+}
+
+.recipe-meta a {
+  text-decoration: none;
+}
+
 .no-results {
   padding: 12px;
   text-align: center;
