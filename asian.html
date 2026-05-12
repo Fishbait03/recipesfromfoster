@@ -50,7 +50,7 @@
         <a href="by-cuisines.html">Cuisines</a>
         <a href="by-price.html">Price</a>
         <a href="by-cook-time.html">Cooking Time</a>
-        <a href="random-recipe.html" onclick="goToRandomPage(); return false;">Random Recipe!</a>
+        <a href="#" onclick="goToRandomPage(); return false;">Random Recipe!</a>
       </nav>
     </header>
     <main>
@@ -176,6 +176,27 @@ sortSelect.addEventListener("change", () => {
   categoryGrid.offsetHeight;
   categoryGrid.style.display = "grid";
 });
+</script>
+
+    <script>
+  function goToRandomPage() {
+
+    // Array of recipe pages
+    const recipes = [
+      "burrito-bowl.html",
+      "chicken-tortellini-pesto.html",
+      "one-pot-pasta.html",
+      "orange-chicken.html",
+      "stroganoff.html",
+      "washday-stew.html",
+    ];
+
+    // Pick random recipe
+    const randomIndex = Math.floor(Math.random() * recipes.length);
+
+    // Send user to page
+    window.location.href = "./" + recipes[randomIndex];
+  }
 </script>
   </body>
 </html>
