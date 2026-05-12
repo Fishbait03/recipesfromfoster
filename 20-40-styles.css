@@ -143,13 +143,19 @@
 .recipe-name {
   font-weight: 600;
   font-size: 16px;
-  text-decoration: none
 }
 
 .recipe-meta {
   font-size: 13px;
   color: #777;
-  text-decoration: none
+}
+
+.recipe-name a {
+  text-decoration: none;
+}
+
+.recipe-meta a {
+  text-decoration: none;
 }
 
 .no-results {
