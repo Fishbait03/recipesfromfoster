@@ -223,7 +223,7 @@ sortSelect.addEventListener("change", () => {
   
     // Array of recipe pages
     const recipes = [
-      { name: "burrito-bowl.html", categories: ["hispanic", "20-40", "30-60-mins", },
+      { name: "burrito-bowl.html", categories: ["hispanic", "20-40", "30-60-mins"], },
       { name: "chicken-tortellini-pesto.html", categories: ["italian", "40-60", "30-60-mins"], },
       { name: "one-pot-pasta.html", categories: ["italian", "20-40", "30-60-mins"], },
       { name: "orange-chicken.html", categories: ["asian", "40-60", "30-60-mins"], },
@@ -244,7 +244,7 @@ sortSelect.addEventListener("change", () => {
 
   do {
     const randomIndex = Math.floor(Math.random() * pool.length);
-    selected = pool[randomIndex].file;
+    selected = pool[randomIndex].name;
   } while (selected === lastRecipe && pool.length > 1);
 
   lastRecipe = selected;
