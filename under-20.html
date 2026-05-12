@@ -74,7 +74,7 @@
         <a href="by-cuisines.html">Cuisines</a>
         <a href="by-price.html">Price</a>
         <a href="by-cook-time.html">Cooking Time</a>
-        <a href="#" onclick="goToRandomPage(); return false;">Random Recipe!</a>
+        <a href="#" onclick="goToRandomPage('under-20'); return false;">Random Recipe for Under $20!</a>
       </nav>
     </header>
     <main>
@@ -203,24 +203,38 @@ sortSelect.addEventListener("change", () => {
 </script>
 
     <script>
-  function goToRandomPage() {
-
+  let lastRecipe = null;
+  
     // Array of recipe pages
     const recipes = [
-      "burrito-bowl.html",
-      "chicken-tortellini-pesto.html",
-      "one-pot-pasta.html",
-      "orange-chicken.html",
-      "stroganoff.html",
-      "washday-stew.html",
+      { name: "burrito-bowl.html", categories: ["hispanic", "20-40", "30-60-mins"], },
+      { name: "chicken-tortellini-pesto.html", categories: ["italian", "40-60", "30-60-mins"], },
+      { name: "one-pot-pasta.html", categories: ["italian", "20-40", "30-60-mins"], },
+      { name: "orange-chicken.html", categories: ["asian", "40-60", "30-60-mins"], },
+      { name: "stroganoff.html", categories: ["nana", "20-40", "90-mins-to-2-hours"], },
+      { name: "washday-stew.html", categories: ["nana", "under-20", "60-90-mins"], },
     ];
 
-    // Pick random recipe
-    const randomIndex = Math.floor(Math.random() * recipes.length);
+    function goToRandomPage(category = null) {
 
-    // Send user to page
-    window.location.href = "./" + recipes[randomIndex];
-  }
+  // filter by category if provided
+  let pool = category
+    ? recipes.filter(r => r.categories.includes(category))
+    : recipes;
+
+  if (pool.length === 0) return;
+
+  let selected;
+
+  do {
+    const randomIndex = Math.floor(Math.random() * pool.length);
+    selected = pool[randomIndex].name;
+  } while (selected === lastRecipe && pool.length > 1);
+
+  lastRecipe = selected;
+
+  window.location.href = selected;
+}
 </script>
   </body>
 </html>
