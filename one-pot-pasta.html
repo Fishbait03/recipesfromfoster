@@ -265,5 +265,80 @@ function loadVideo() {
     '<iframe width="560" height="315" src="https://www.youtube.com/watch?v=JClz-Hx8dmM&t=1013s" frameborder="0" allowfullscreen></iframe>';
 }
 </script>
+    <script>
+const nutrition = {
+  servings: 6,
+  calories: 1367,
+  totalfat: 57.8,
+  saturatedfat: 14.6,
+  cholesterol: 95,
+  sodium: 2199,
+  totalcarbs: 128.5,
+  dietaryfiber: 14.2,
+  totalsugars: 17.5,
+  protein: 88.2
+};
+
+document.querySelectorAll(".nutrition-box").forEach(box => {
+  box.innerHTML = `
+    <div class="nutrition-title">
+    Nutrition Facts
+    </div>
+    
+    <div class="nutrition-calories">
+      ${nutrition.calories}
+      <small>Calories per Serving</small>
+    </div>
+
+    <div class="nutrition-servings">
+      Servings: ${nutrition.servings}
+    </div>
+
+    <div class="nutrition-grid">
+
+      <div class="nutrition-item">
+        <span>Total Fat</span>
+        <span>${nutrition.totalfat}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Saturated Fat</span>
+        <span>${nutrition.saturatedfat}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Cholesterol</span>
+        <span>${nutrition.cholesterol}mg</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Sodium</span>
+        <span>${nutrition.sodium}mg</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Total Carbs</span>
+        <span>${nutrition.totalcarbs}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Dietary Fiber</span>
+        <span>${nutrition.dietaryfiber}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Total Sugars</span>
+        <span>${nutrition.totalsugars}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Protein</span>
+        <span>${nutrition.protein}g</span>
+      </div>
+
+    </div>
+  `;
+});
+</script>
   </body>
 </html>
