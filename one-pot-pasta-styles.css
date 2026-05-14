@@ -503,3 +503,84 @@ footer {
   }
 }
  
+.nutrition-section {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.nutrition-title {
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 900;
+  text-align: center;
+  border-bottom: 4px solid black;
+  padding-bottom: 6px;
+}
+ 
+.nutrition-box {
+  width: 320px;
+  padding: 16px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  max-width: 320px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  font-family: Arial, sans-serif;
+}
+
+.nutrition-box h3 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.3px;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 12px;
+}
+
+.nutrition-item {
+  font-size: 13px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.nutrition-item span:first-child {
+  color: #666;
+}
+
+.nutrition-item span:last-child {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Highlight calories as the "hero stat" */
+.nutrition-calories {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.nutrition-calories small {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #777;
+}
+
+.nutrition-servings {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #666;
+}
