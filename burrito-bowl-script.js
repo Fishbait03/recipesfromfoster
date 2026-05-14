@@ -37,51 +37,58 @@ search.addEventListener("keyup", function() {
 });
 
 document.querySelectorAll(".nutrition-box").forEach(box => {
-  const data = box.parentElement.querySelector(".nutrition-data");
-  if (!data) return;
-
-  const nutrition = JSON.parse(data.textContent);
 
   box.innerHTML = `
     <div class="nutrition-calories">
-	  ${nutrition.servings}
-	  <small>Number of Servings</small>
-	  ${nutrition.calories}
-	  <small>Calories per Serving</small>
-	</div>
+      ${nutrition.servings}
+      <small>Number of Servings</small>
+
+      ${nutrition.calories}
+      <small>Calories per Serving</small>
+    </div>
+
     <div class="nutrition-grid">
-	  <div class="nutrition-item">
-	    <span>Total Fat</span>
-		<span>${nutrition.totalfat}g</span>
-	  </div>
+
       <div class="nutrition-item">
-	    <span>Saturated Fat</span>
-		<span>${nutrition.saturatedfat}g</span>
-	  </div>
-	  <div class="nutrition-item">
-	    <span>Cholesterol</span>
-		<span>${nutrition.cholesterol}mg</span>
-	  </div>
-	  <div class="nutrition-item">
-	    <span>Sodium</span>
-		<span>${nutrition.sodium}mg</span>
-	  </div>
-	  <div class="nutrition-item">
-	    <span>Total Carbs</span>
-		<span>${nutrition.totalcarbs}g</span>
-	  </div>
-	  <div class="nutrition-item">
-	    <span>Dietary Fiber</span>
-		<span>${nutrition.dietaryfiber}g</span>
-	  </div>
-	  <div class="nutrition-item">
-	    <span>Total Sugars</span>
-		<span>${nutrition.totalsugars}g</span>
-	  </div>
-	  <div class="nutrition-item">
-	    <span>Protein</span>
-		<span>${nutrition.protein}g</span>
-	  </div>
-	</div>
+        <span>Total Fat</span>
+        <span>${nutrition.totalfat}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Saturated Fat</span>
+        <span>${nutrition.saturatedfat}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Cholesterol</span>
+        <span>${nutrition.cholesterol}mg</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Sodium</span>
+        <span>${nutrition.sodium}mg</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Total Carbs</span>
+        <span>${nutrition.totalcarbs}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Dietary Fiber</span>
+        <span>${nutrition.dietaryfiber}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Total Sugars</span>
+        <span>${nutrition.totalsugars}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Protein</span>
+        <span>${nutrition.protein}g</span>
+      </div>
+
+    </div>
   `;
 });
