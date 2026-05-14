@@ -264,6 +264,10 @@ const nutrition = {
 
 document.querySelectorAll(".nutrition-box").forEach(box => {
   box.innerHTML = `
+    <div class="nutrition-title">
+    Nutrition Facts
+    </div>
+    
     <div class="nutrition-calories">
       ${nutrition.calories}
       <small>Calories per Serving</small>
