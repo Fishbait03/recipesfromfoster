@@ -39,10 +39,11 @@ search.addEventListener("keyup", function() {
 document.querySelectorAll(".nutrition-box").forEach(box => {
 
   box.innerHTML = `
-    <div class="nutrition-calories">
+    <div class="nutrition-servings">
       ${nutrition.servings}
       <small>Number of Servings</small>
-
+    </div>
+	<div class="nutrition-calories">
       ${nutrition.calories}
       <small>Calories per Serving</small>
     </div>
