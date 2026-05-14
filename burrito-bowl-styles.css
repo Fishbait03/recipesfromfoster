@@ -560,3 +560,9 @@ footer {
   font-weight: 500;
   color: #777;
 }
+
+.nutrition-servings {
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #666;
+}
