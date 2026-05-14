@@ -244,5 +244,80 @@ function toggleMenu() {
     window.location.href = "./" + recipes[randomIndex];
   }
 </script>
+    <script>
+const nutrition = {
+  servings: 6,
+  calories: 834,
+  totalfat: 11.7,
+  saturatedfat: 3.4,
+  cholesterol: 34,
+  sodium: 5012,
+  totalcarbs: 139.7,
+  dietaryfiber: 12.3,
+  totalsugars: 10.1,
+  protein: 40.1
+};
+
+document.querySelectorAll(".nutrition-box").forEach(box => {
+  box.innerHTML = `
+    <div class="nutrition-title">
+    Nutrition Facts
+    </div>
+    
+    <div class="nutrition-calories">
+      ${nutrition.calories}
+      <small>Calories per Serving</small>
+    </div>
+
+    <div class="nutrition-servings">
+      Servings: ${nutrition.servings}
+    </div>
+
+    <div class="nutrition-grid">
+
+      <div class="nutrition-item">
+        <span>Total Fat</span>
+        <span>${nutrition.totalfat}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Saturated Fat</span>
+        <span>${nutrition.saturatedfat}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Cholesterol</span>
+        <span>${nutrition.cholesterol}mg</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Sodium</span>
+        <span>${nutrition.sodium}mg</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Total Carbs</span>
+        <span>${nutrition.totalcarbs}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Dietary Fiber</span>
+        <span>${nutrition.dietaryfiber}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Total Sugars</span>
+        <span>${nutrition.totalsugars}g</span>
+      </div>
+
+      <div class="nutrition-item">
+        <span>Protein</span>
+        <span>${nutrition.protein}g</span>
+      </div>
+
+    </div>
+  `;
+});
+</script>
   </body>
 </html>
