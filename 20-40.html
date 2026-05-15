@@ -119,7 +119,7 @@
     <footer>
       <p>Links:</p>
       <a class="footer-nav-item" href="https://www.youtube.com/@Cookster5303" target="_blank">Youtube Channel</a>
-      <p>Email me: </p><a class="footer-nav-item" href="mailto:cookingwithfoster@gmail.com" target="_blank">cookingwithfoster@gmail.com</a>
+      <p>Email me (Click to copy): </p><a class="footer-nav-item" href="mailto:cookingwithfoster@gmail.com" onclick="copyLink(event)">cookingwithfoster@gmail.com</a>
       <a class="footer-nav-item" href="https://docs.google.com/forms/d/e/1FAIpQLSev2oEf2AXdplUa6YTQya08hpiZHCpJwaaWleGGoNRWWZP4cg/viewform?usp=publish-editor" target="_blank">Recipe Request Form</a>
     </footer>
     <script>
@@ -252,5 +252,19 @@ sortSelect.addEventListener("change", () => {
   window.location.href = selected;
 }
 </script>
+    function copyLink(event) {
+  // Prevent the page from navigating to the URL
+  event.preventDefault();
+  
+  // Get the URL from the href attribute
+  const linkUrl = event.target.getAttribute('href');
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(linkUrl).then(() => {
+    alert("Link copied to clipboard!");
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+  });
+}
   </body>
 </html>
