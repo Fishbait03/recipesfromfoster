@@ -169,5 +169,21 @@ function toggleMenu() {
     window.location.href = "./" + recipes[randomIndex];
   }
 </script>
+    <script>
+    function copyLink(event) {
+  // Prevent the page from navigating to the URL
+  event.preventDefault();
+  
+  // Get the URL from the href attribute
+  const linkUrl = event.target.getAttribute('href');
+
+  // Copy to clipboard
+  navigator.clipboard.writeText(linkUrl).then(() => {
+    alert("Link copied to clipboard!");
+  }).catch(err => {
+    console.error('Failed to copy: ', err);
+  });
+}
+    </script>
   </body>
 </html>
